@@ -1,0 +1,1011 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ECommerce - Backend Services",
+    "description": "E-commerce App's Backend services",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://ecommerce-backend-app.herokuapp.com/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Attributes",
+      "description": "List of operations of Attributes"
+    },
+    {
+      "name": "Categories",
+      "description": "List of operations of Categories"
+    },
+    {
+      "name": "Customers",
+      "description": "List of operations of Customers"
+    },
+    {
+      "name": "Departments",
+      "description": "List of operations of Departments"
+    },
+    {
+      "name": "Payment",
+      "description": "List of operations of Payments"
+    },
+    {
+      "name": "Products",
+      "description": "List of operations of Products"
+    },
+    {
+      "name": "Orders",
+      "description": "List of operations of Orders"
+    },
+    {
+      "name": "Shipping",
+      "description": "List of operations of Shipping"
+    },
+    {
+      "name": "Shopping Cart",
+      "description": "List of operations of Shopping Cart"
+    },
+    {
+      "name": "Tax",
+      "description": "List of operations of Tax"
+    }
+  ],
+  "paths": {
+    "/departments": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Returns the list of departments",
+        "description": "No Auth required.",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "department_id": 1,
+                    "name": "Regional",
+                    "description": "Proud of your country? Wear a T-shirt with a national symbol stamp!"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/departments/{departmentId}": {
+      "get": {
+        "tags": [
+          "Departments"
+        ],
+        "summary": "Returns the details of a department",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "path",
+            "description": "The department id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "department_id": 1,
+                  "name": "Regional",
+                  "description": "Proud of your country? Wear a T-shirt with a national symbol stamp!"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given departmentId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Returns the list of categories",
+        "description": "No Auth required.",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "category_id": 1,
+                    "department_id": 1,
+                    "name": "French",
+                    "description": "The French have always had an eye for beauty. One look at the T-shirts below and you'll see that same appreciation has been applied abundantly to their postage stamps. Below are some of our most beautiful and colorful T-shirts, so browse away! And don't forget to go all the way to the bottom - you don't want to miss any of them!"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{categoryId}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Returns the details of a Category",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "The category id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "category_id": 1,
+                  "department_id": 1,
+                  "name": "French",
+                  "description": "The French have always had an eye for beauty. One look at the T-shirts below and you'll see that same appreciation has been applied abundantly to their postage stamps. Below are some of our most beautiful and colorful T-shirts, so browse away! And don't forget to go all the way to the bottom - you don't want to miss any of them!"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given categoryId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/categories/inProduct/{productId}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Returns the Category of a given product",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "category_id": 1,
+                    "department_id": 1,
+                    "name": "French"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "When given productId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/categories/inDepartment/{departmentId}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Returns All Categories in a given department",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "path",
+            "description": "The department id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "category_id": 1,
+                    "department_id": 1,
+                    "name": "French",
+                    "description": "The French have always had an eye for beauty. One look at the T-shirts below and you'll see that same appreciation has been applied abundantly to their postage stamps. Below are some of our most beautiful and colorful T-shirts, so browse away! And don't forget to go all the way to the bottom - you don't want to miss any of them!"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "When given departmentId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/attributes": {
+      "get": {
+        "tags": [
+          "Attributes"
+        ],
+        "summary": "Returns the list of attributes",
+        "description": "No Auth required.",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "attribute_id": 1,
+                    "name": "Size"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/attributes/{attributeId}": {
+      "get": {
+        "tags": [
+          "Attributes"
+        ],
+        "summary": "Returns the details of an attribute",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "attributeId",
+            "in": "path",
+            "description": "The attribute id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "attribute_id": 1,
+                  "name": "Size"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given attributeId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/attributes/values/{attributeId}": {
+      "get": {
+        "tags": [
+          "Attributes"
+        ],
+        "summary": "Returns All the attribute's values of an attribute",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "attributeId",
+            "in": "path",
+            "description": "The attribute id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "attribute_value_id": 1,
+                    "attribute_id": 1,
+                    "value": "S"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "When given attributeId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/attributes/inProduct/{productId}": {
+      "get": {
+        "tags": [
+          "Attributes"
+        ],
+        "summary": "Returns All the attribute's of a product",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "attribute_name": "Size",
+                    "attribute_value_id": 1,
+                    "attribute_value": "S"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "When given productId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns the list of products",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "page size",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "description_length",
+            "in": "query",
+            "description": "length of the description",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "paginationMeta": {
+                    "currentPage": 1,
+                    "currentPageSize": 20,
+                    "totalPages": 6,
+                    "totalRecords": 101
+                  },
+                  "rows": [
+                    {
+                      "product_id": 1,
+                      "name": "Arc d'Triomphe",
+                      "description": "This beautiful and iconic T-shirt will no doubt lead you to your own triumph.",
+                      "price": "14.99",
+                      "discounted_price": "0.00",
+                      "image": "arc-d-triomphe.gif",
+                      "image_2": "arc-d-triomphe-2.gif",
+                      "thumbnail": "arc-d-triomphe-thumbnail.gif",
+                      "display": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/search": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns the search result of list of products",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "page size",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "description_length",
+            "in": "query",
+            "description": "length of the description",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 200
+            }
+          },
+          {
+            "name": "query_string",
+            "in": "query",
+            "description": "product's search string/item",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "all_words",
+            "in": "query",
+            "description": "product's search string/item",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "on"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "products": {
+                    "count": 15,
+                    "rows": [
+                      {
+                        "product_id": 65,
+                        "name": "Afghan Flower",
+                        "description": "This beautiful image was issued to celebrate National Teachers Day. Perhaps you know a teacher who would love this T-shirt?",
+                        "price": "18.50",
+                        "discounted_price": "16.99",
+                        "thumbnail": "afghan-flower-thumbnail.gif"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{productId}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns the deatils of single product",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "Product Id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "description_length",
+            "in": "query",
+            "description": "length of the description",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "product_id": 1,
+                  "name": "Arc d'Triomphe",
+                  "description": "This beautiful and iconic T-shirt will no doubt lead you to your own triumph.",
+                  "price": "14.99",
+                  "discounted_price": "0.00",
+                  "image": "arc-d-triomphe.gif",
+                  "image_2": "arc-d-triomphe-2.gif",
+                  "thumbnail": "arc-d-triomphe-thumbnail.gif",
+                  "display": 0,
+                  "attributes": [
+                    {
+                      "value": "S",
+                      "attribute_type": {
+                        "attribute_id": 1,
+                        "name": "Size"
+                      }
+                    },
+                    {
+                      "value": "M",
+                      "attribute_type": {
+                        "attribute_id": 1,
+                        "name": "Size"
+                      }
+                    },
+                    {
+                      "value": "L",
+                      "attribute_type": {
+                        "attribute_id": 1,
+                        "name": "Size"
+                      }
+                    },
+                    {
+                      "value": "XL",
+                      "attribute_type": {
+                        "attribute_id": 1,
+                        "name": "Size"
+                      }
+                    },
+                    {
+                      "value": "XXL",
+                      "attribute_type": {
+                        "attribute_id": 1,
+                        "name": "Size"
+                      }
+                    },
+                    {
+                      "value": "White",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Black",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Red",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Orange",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Yellow",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Green",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Blue",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Indigo",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    },
+                    {
+                      "value": "Purple",
+                      "attribute_type": {
+                        "attribute_id": 2,
+                        "name": "Color"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given productId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/products/inCategory/{categoryId}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns all products in a Category",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category Id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "page size",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "description_length",
+            "in": "query",
+            "description": "length of the description",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "count": 18,
+                  "rows": [
+                    {
+                      "product_id": 1,
+                      "name": "Arc d'Triomphe",
+                      "description": "This beautiful and iconic T-shirt will no doubt lead you to your own triumph.",
+                      "price": "14.99",
+                      "discounted_price": "0.00",
+                      "image": "arc-d-triomphe.gif",
+                      "image_2": "arc-d-triomphe-2.gif",
+                      "thumbnail": "arc-d-triomphe-thumbnail.gif",
+                      "display": 0
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given categoryId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/products/inDepartment/{departmentId}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Returns all products in a Category",
+        "description": "No Auth required.",
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "path",
+            "description": "Department Id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "page size",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "description_length",
+            "in": "query",
+            "description": "length of the description",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "example": {
+                  "count": 10,
+                  "rows": [
+                    {
+                      "product_id": 1,
+                      "name": "Arc d'Triomphe",
+                      "description": "This beautiful and iconic T-shirt will no doubt lead you to your own triumph.",
+                      "price": "14.99",
+                      "discounted_price": "0.00",
+                      "image": "arc-d-triomphe.gif",
+                      "image_2": "arc-d-triomphe-2.gif",
+                      "thumbnail": "arc-d-triomphe-thumbnail.gif",
+                      "display": 0
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given categoryId is not a number or is not present"
+          }
+        }
+      }
+    },
+    "/customers": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Registers a new customer and login same customer",
+        "description": "No Auth required.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successful regitration of customer",
+            "content": {
+              "application/json": {
+                "example": {
+                  "customer": {
+                    "customer_id": 262,
+                    "name": "Test",
+                    "email": "test242@gmail.com",
+                    "password": "",
+                    "credit_card": null,
+                    "address_1": null,
+                    "address_2": null,
+                    "city": null,
+                    "region": null,
+                    "postal_code": null,
+                    "country": null,
+                    "shipping_region_id": 1,
+                    "day_phone": null,
+                    "eve_phone": null,
+                    "mob_phone": null
+                  },
+                  "accessToken": "eyJhbGciOiJIUzI1NiJ9.dGVzdDI0MkBnbWFpbC5jb20xNTc3ODgyNjM2NzI0.rcRsIgSZmZ5cgZIuIl30jhUJI9dqw_aFEHEL6j-ebQ0",
+                  "expiresIn": "2020-01-02T12:43:56.724Z"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When given email is already present or invalid"
+          }
+        }
+      }
+    },
+    "/customers/login": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Login existing customer",
+        "description": "No Auth required.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successful login of customer",
+            "content": {
+              "application/json": {
+                "example": {
+                  "customer": {
+                    "customer_id": 262,
+                    "name": "Test",
+                    "email": "test242@gmail.com",
+                    "password": "",
+                    "credit_card": null,
+                    "address_1": null,
+                    "address_2": null,
+                    "city": null,
+                    "region": null,
+                    "postal_code": null,
+                    "country": null,
+                    "shipping_region_id": 1,
+                    "day_phone": null,
+                    "eve_phone": null,
+                    "mob_phone": null
+                  },
+                  "accessToken": "eyJhbGciOiJIUzI1NiJ9.dGVzdDI0MkBnbWFpbC5jb20xNTc3ODgyNjM2NzI0.rcRsIgSZmZ5cgZIuIl30jhUJI9dqw_aFEHEL6j-ebQ0",
+                  "expiresIn": "2020-01-02T12:43:56.724Z"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "When user email is invalid"
+          },
+          "401": {
+            "description": "On authenticaion failure"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "user",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "password"
+        ]
+      },
+      "login": {
+        "title": "login",
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1147 @@
+{
+	"info": {
+		"_postman_id": "c825411d-15cb-4cf0-81dd-4ff51a9f84e7",
+		"name": "ECommerce-Node-Backend-Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All Departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/departments",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET A Single Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/departments/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"departments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/categories",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET A Single Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/categories/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"categories",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/categories/inProduct/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"categories",
+						"inProduct",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Categories In A Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/categories/inDepartment/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"categories",
+						"inDepartment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Attributes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/attributes",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET A Single Attribute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/attributes/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"attributes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Attribute Values In An Attribute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/attributes/values/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"attributes",
+						"values",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Attributes Of A Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/attributes/inProduct/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"attributes",
+						"inProduct",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products?page=1&limit=20&description_length=300",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "description_length",
+							"value": "300"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Search Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products/search?page=1&limit=20&description_length=300&query_string=Flower&all_words=on",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "description_length",
+							"value": "300"
+						},
+						{
+							"key": "query_string",
+							"value": "Flower"
+						},
+						{
+							"key": "all_words",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET A Single Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Products In A Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products/inCategory/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"inCategory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Products In A Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products/inDepartment/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"inDepartment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Reviews Of A Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products/1/reviews",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST A Product Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customer_id\": 1,\n\t\"review\": \"This is a test review\",\n\t\"rating\": 5\n}"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/products/1/reviews",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"products",
+						"1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create A New Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test\",\r\n     \"email\": \"test230@gmail.com\",\r\n     \"password\": \"test\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/customers",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Login A Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"email\": \"test221@gmail.com\",\r\n     \"password\": \"test\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/customers/login",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Customer By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/customers/42",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customers",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Update Customer Details",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"test\",\r\n    \"day_phone\" : \"123456\",\r\n    \"eve_phone\" : \"123456\",\r\n    \"mob_phone\" : \"123456\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/customers/42",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customers",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Update Customer Address",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address_1\" : \"test\",\r\n    \"address_2\" : \"test\",\r\n    \"city\" : \"San Francisco\",\r\n    \"region\" : \"USA\",\r\n    \"postal_code\" : \"CA 1254\",\r\n    \"shipping_region_id\" : 1\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/customers/42",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customers",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Update Customer Credit Card",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"credit_card\" : \"4056330112341234\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/customers/42",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customers",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Cart Unique ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shoppingcart/generateUniqueId",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shoppingcart",
+						"generateUniqueId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product To Shopping Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cart_id\": \"7625f78b-80dd-4bed-93d0-6613ffddc74c\",\r\n    \"product_id\" : 1,\r\n    \"attributes\" : \"1\",\r\n    \"quantity\" : 5\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shoppingcart/add",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shoppingcart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Of Products In A Shopping Cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shoppingcart/7625f78b-80dd-4bed-93d0-6613ffddc74c",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shoppingcart",
+						"7625f78b-80dd-4bed-93d0-6613ffddc74c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cart Item Quantity",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\" : 3\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shoppingcart/update/22",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shoppingcart",
+						"update",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item From Shopping Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shoppingcart/removeProduct/20",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shoppingcart",
+						"removeProduct",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empty Shpooing Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:80/shoppingcart/empty/e29b3607-bd94-48de-85ca-3a904517d53a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"shoppingcart",
+						"empty",
+						"e29b3607-bd94-48de-85ca-3a904517d53a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create An Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-KEY",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.dGVzdDIyMUBnbWFpbC5jb20xNTY4MzkwNzA3ODM0.0JTobeANLsts636j7Rsk7Spc7_PZ_D50s7vQe3kt9Qg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cart_id\" : \"105201e2-4ee2-4305-b0c8-0dbd5106493f\",\r\n    \"shipping_id\" : 1,\r\n    \"tax_id\" : 1,\r\n    \"email\": \"test221@gmail.com\",\r\n    \"customer_id\": 1\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/orders",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get An Order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-KEY",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.dGVzdDIyMUBnbWFpbC5jb20xNTY2MTE0MDY3NTcx.yXYTaa5tVXwpPJYuZFWheArPDBy4uy2nDD73m5Gzf_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/orders/2",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers Order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-KEY",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.dGVzdDIyMUBnbWFpbC5jb20xNTY2MTE0MDY3NTcx.yXYTaa5tVXwpPJYuZFWheArPDBy4uy2nDD73m5Gzf_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/orders/inCustomer/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"orders",
+						"inCustomer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Short Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "USER-KEY",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.dGVzdDIyMUBnbWFpbC5jb20xNTY2MTE0MDY3NTcx.yXYTaa5tVXwpPJYuZFWheArPDBy4uy2nDD73m5Gzf_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/orders/shortDetail/2",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"orders",
+						"shortDetail",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Taxes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/tax",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"tax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Single Tax",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/tax/1",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"tax",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Shipping Regions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shipping/regions",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shipping",
+						"regions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Shippings In A Region",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://ecommerce-backend-app.herokuapp.com/shipping/regions/2",
+					"protocol": "https",
+					"host": [
+						"ecommerce-backend-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"shipping",
+						"regions",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stripe Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"test221@gmail.com\",\r\n\t\"stripeToken\": \"\",\r\n\t\"card_id\": \"tok_1FIqmsJUJI7Z4STaNsDdb8iK\",\r\n\t\"amount\": 1,\r\n\t\"order_id\": 12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/stripe/charge/callback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"stripe",
+						"charge",
+						"callback"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
