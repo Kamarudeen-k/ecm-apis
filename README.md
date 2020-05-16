@@ -33,7 +33,7 @@ mysql -u <dbuser> -D <databasename> -p < ./src/database/database.sql
 
 * Build image
 
-`docker build -t node_challenge .`
+`docker build -t ecom_apis .`
 
 * Run container
-`docker run --rm -p 8000:80 node_challenge`
+`docker run --rm -p 8000:80 ecom_apis`
